@@ -1,0 +1,218 @@
+@import "../base/base";
+@import "../themes/variable";
+@import "../components/component";
+
+.header {
+    background-color: $c0-text-dark;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        border: 1px;
+        .logo {
+            width: 116px;
+            height: 32px;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            .search {
+                @include text($fz-xl, $fw-light, $c0-text-light);
+            }
+            .cart {
+                width: 60px;
+                height: 30px;
+                padding-left: 15px;
+            }
+            .login {
+                padding-top: 6px;
+                @include text($fz-2small, $fw-regular, $c0-text-light);
+                width: 91px;
+                height: 32px;
+                padding-left: 15px;
+                a {
+                    color: $c0-text-light;
+                    position: relative;
+                    @include customAfterEffect;
+                }
+            }
+            .register {
+                padding-top: 6px;
+                @include text($fz-2small, $fw-regular, $c0-text-light);
+                width: 90px;
+                height: 32px;
+                a {
+                    color: $c0-text-light;
+                    position: relative;
+                    @include customAfterEffect;
+                }
+            }
+            .logout {
+                margin-top: -7px;
+            }
+        }
+    }
+    .navbar {
+        height: 50px;
+        .container-fluid {
+            .collapse {
+                .navbar-nav {
+                    .nav-link-home {
+                        a {
+                            &:hover{
+                                color: $c0-text-brown;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form-control {
+    height: 51px;
+    width: 482px;
+    border: none; 
+    border-bottom: 2px solid $c0-bg-purple; 
+    outline: none; 
+}
+
+.form-control::placeholder {
+    font-size: $fz-4xl; 
+}
+
+// Product chính
+.main-product {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    .product-img {
+        margin-top: -100px;
+        padding-left: 50px;
+        img {
+            width: 120%;
+        }
+    }
+    .product-content {
+        margin: 110px 150px 0 0;
+        .product-name {
+            @include text($fz-3xl, $fw-light, $c0-text-dark);
+        }
+        .main-product-detail {
+            @include text($fz-xl, $fw-light, $c0-bg-grey);
+        }
+        a {
+            #btn-buy {
+                text-align: center;
+                height: 50px;
+                width: 150px;
+                @include button($fz-xl,$fw-light,$c0-text-light,$c0-bg-brown,1px solid $c0-bg-light,$c0-bg-light,$c0-text-brown);
+            }
+        }
+    }
+}
+
+.product-feature {
+    width: 55%;
+    padding: 5px 0 5px 10px;
+    @include bg($c0-text-light, $fz-2xl, $c0-bg-purple-to-blue)
+}
+
+// Danh sách Product lấy từ API
+.list-product {
+    .card {
+        .card-body {
+            text-align: center;
+            img {
+                width: 70%;
+            }
+        }
+        .card-footer {
+            .p-name {
+                margin: 23px 0 0 23px;
+                @include text($fz-xl, $fw-regular, $c0-text-dark);
+            }
+            .p-title {
+                margin: 10px 0 0 23px;
+                @include text($fz-base, $fw-regular, $c0-text-grey);
+            }
+            .btnbuy-price {
+                margin-top: 17px;
+                display: flex;
+                .btn {
+                    text-align: center;
+                    line-height: 50px;
+                    height: 64px;
+                    width: 175px;
+                    @include button($fz-xl,$fw-light,$c0-text-light,$c0-bg-green,1px solid $c0-bg-light,$c0-bg-light,$c0-text-brown);
+                }
+                .product-price {
+                    text-align: center;
+                    line-height: 64px;
+                    height: 64px;
+                    width: 160px;
+                    @include bg();
+                }
+            }
+        }
+    }
+}
+
+// footer
+.footer {
+    margin-top: 50px;
+    .footer-top {
+        background-color: $c0-bg-footer;
+        height: 200px;
+        .container {
+            display: flex;
+            margin: 0 125px;
+            .get-help {
+                margin-top: 40px;
+                width: calc(100%/3);
+            }
+            .orders {
+                margin-top: 40px;
+                width: calc(100%/3);
+            }
+            .register {
+                margin-top: 40px;
+                width: calc(100%/3);
+            }
+        }
+    }
+    .footer-bottom {
+        background-color: $c1-bg-footer;
+        height: 175px;
+        .container {
+            display: flex;
+            margin: 0 125px;
+            .sign-up, .gift-cards, .stores {
+                margin-top: 50px;
+                width: calc(100%/3);
+            }
+        }
+    }
+}
+
+.title-text {
+    margin-bottom: 10px;
+    @include text($fz-xl, $fw-bold, $c0-text-dark);
+}
+.content-text {
+    display: grid;
+    margin-bottom: 5px;
+    @include text($fz-2small, $fw-regular, $c0-text-dark);
+}
+.content-link {
+    @include text($fz-2small, $fw-regular, $c0-text-red);
+}
+
+.line {
+    border-left: 2px solid $c0-bg-line; 
+    height: 100px; 
+    margin: 40px 15px; 
+}

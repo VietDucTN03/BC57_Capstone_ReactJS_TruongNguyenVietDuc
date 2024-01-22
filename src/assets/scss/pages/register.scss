@@ -1,0 +1,20 @@
+@import "../base/base";
+@import "../themes/variable";
+@import "../components/component";
+
+.container {
+    .row {
+        .input-right {
+            .gender {
+                text-align: center;
+                width: 60%;
+                margin-left: 50px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .btn-register {
+                @include buttonAction
+            }
+        }
+    }
+}

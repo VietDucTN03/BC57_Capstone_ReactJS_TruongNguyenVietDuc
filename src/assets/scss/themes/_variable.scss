@@ -1,0 +1,106 @@
+//Color
+    //color-text
+    $c0-text-dark: #1E1D1D;
+    $c0-text-light: #F6F6F6;
+    $c0-text-red: #FC0303;
+    $c0-text-green: #1ED90E;
+    $c0-text-brown: #F8B653;
+    $c0-text-grey: #D9D9D9;
+    $c0-text-purple: #AE18E2;
+    $c0-text-light-blue: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+    //color-background
+    $c0-bg-light: #FFFFFF;
+    $c0-bg-black: #000000;
+    $c0-bg-brown: #F8B653;
+    $c0-bg-purple: #AE18E2;
+    $c0-bg-darkbrown: #E1B067;
+    $c0-bg-bgproduct: #F8F8F8;
+    $c0-bg-grey: #cccccc;
+    $c0-bg-light-blue: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+    $c0-bg-purple-to-blue: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
+    $c0-bg-footer: #FAFAFA;
+    $c1-bg-footer: #ECECEC; 
+    $c0-bg-line: #E5E5E5;
+    $c0-bg-green: #9DE167;
+    $c1-bg-button: #9900FF;
+
+//Font-size:
+$fz-small:10px;
+$fz-base:16px;
+$fz-xl:20px;
+$fz-2xl:30px;
+$fz-3xl:40px;
+$fz-4xl:24px;
+$fz-2small: 12px;
+//font-weight
+$fw-light:300;
+$fw-regular:400;
+$fw-medium:500;
+$fw-semibold:600;
+$fw-bold:700;
+
+@mixin text($fz:$fz-xl, $fw:$fw-light, $c:$c0-text-dark) {
+    font-size: $fz;
+    font-weight: $fw;
+    color: $c;
+}
+
+@mixin textRegister($fz:$fz-2xl, $fw:$fw-regular, $c:$c0-text-dark) {
+    font-size: $fz;
+    font-weight: $fw;
+    color: $c;
+}
+
+@mixin button($fz,$fw,$c,$bg,$border,$bg-hover,$c-hover) {
+    @include text($fz,$fw,$c);
+    background:$bg;
+    border: $border;
+    cursor:pointer;
+    transition:all 0.5s;
+    &:hover{
+        background: $bg-hover;
+        color:$c-hover;
+        transition:all 0.5s;
+    }
+}
+
+@mixin buttonAction {
+    color: $c0-text-light;
+    font-size: $fz-2small;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: $c1-bg-button;
+}
+
+@mixin bg($c:$c0-text-dark, $fz:$fz-4xl, $bg:$c0-text-grey, $border:1px solid $c0-bg-light) {
+    color: $c;
+    font-size: $fz;
+    background:$bg;
+    border: $border;
+}
+
+@mixin customAfterEffect {
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 0px;
+        max-width: 50%;
+        background-color: $c0-bg-brown;
+        bottom: -5px;
+        left: 0;     
+        transition: width 0.5s;
+
+        @include text($fz: $fz-base, $fw: $fw-regular, $c: $c0-text-dark); // Adjust font size, weight, and color as needed
+    }
+
+    &:hover {
+        color: $c0-text-brown;
+
+        &::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+    }
+}

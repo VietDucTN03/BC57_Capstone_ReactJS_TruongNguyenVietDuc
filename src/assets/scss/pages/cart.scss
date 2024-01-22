@@ -1,0 +1,16 @@
+@import "../base/base";
+@import "../themes/variable";
+@import "../components/component";
+
+.buttonEvent {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;   
+    .button-edit {
+        width: 80px;
+        background-color: $c1-bg-button;
+    }
+}
+.btnOrder {
+    margin-right: 131px;
+}

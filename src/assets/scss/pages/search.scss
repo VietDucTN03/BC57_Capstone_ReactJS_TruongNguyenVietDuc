@@ -1,0 +1,36 @@
+@import "../base/base";
+@import "../themes/variable";
+@import "../components/component";
+
+.container {
+    .search-input {
+        .nameProduct {
+            text-align: center;
+            background-color: $c0-bg-line;
+            height: 40px;
+            width: 33%;
+        }
+        .input-group-button {
+            margin-left: 30px;
+            @include buttonAction
+        }
+    }
+    .search-title {        
+        width: 55%;
+        padding: 5px 0 5px 10px;
+        @include bg($c0-text-light, $fz-2xl, $c0-bg-purple-to-blue);
+    }
+    .price {
+        margin-left: 50px;
+        .abc {
+            margin-bottom: 5px;
+        }
+        .btn {
+            text-align: left;
+            background-color: $c0-bg-line;
+            margin-bottom: 5px;
+            height: 40px;
+            width: 33%;
+        }
+    }
+}

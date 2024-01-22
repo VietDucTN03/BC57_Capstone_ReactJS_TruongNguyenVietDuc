@@ -1,0 +1,24 @@
+@import "../base/base";
+@import "../themes/variable";
+@import "../components/component";
+
+.container {
+    .typesubmitLogin {
+        width: 93%;
+    }
+    .form-group {
+        .col-8 {
+            .registerNow {
+                text-align: right;
+            }
+        }
+        .submitLogin {
+            .btn {
+                @include buttonAction
+            }
+        }
+    }
+    .loginFacebook {
+        width: 81%;
+    }
+}
